@@ -10,7 +10,7 @@ export enum LOG_TYPE {
   Debug = "Debug",
 }
 
-export const LOG_PREFIX: Record<LOG_TYPE, () => string> = {
+export const LOG_ICON: Record<LOG_TYPE, () => string> = {
   [LOG_TYPE.Success]: () => chalkin.bold.green("✔"),
   [LOG_TYPE.Error]: () => chalkin.bold.red("ERROR"),
   [LOG_TYPE.Fatal]: () => chalkin.bold.redBright("FATAL"),
@@ -29,3 +29,13 @@ export const LOG_MESSAGE: Record<LOG_TYPE, (message: string) => string> = {
   [LOG_TYPE.Info]: (message: string) => chalkin.black(message),
   [LOG_TYPE.Debug]: (message: string) => chalkin.black(message),
 };
+export const LOG_PREFIX: Record<LOG_TYPE, string> = {
+  [LOG_TYPE.Success]: chalkin.bgGreen.whiteBright(" SUCCESS "),
+  [LOG_TYPE.Error]: chalkin.bgRed.whiteBright(" ERROR "),
+  [LOG_TYPE.Fatal]: chalkin.bgRed.whiteBright(" FATAL "),
+  [LOG_TYPE.Warn]: chalkin.bgYellow.whiteBright(" WARN "),
+  [LOG_TYPE.Log]: chalkin.bgGray.bgWhite(" LOG "),
+  [LOG_TYPE.Info]: chalkin.bgGray.bgBlack(" INFO "),
+  [LOG_TYPE.Debug]: chalkin.bgGray.bgBlack(" DEBUG "),
+};
+
