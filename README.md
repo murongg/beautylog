@@ -2,6 +2,8 @@
 
 🍬 Terminal beautiful log for Deno
 
+**There will be destructive updates at any time.**
+
 ## 👽 Usage
 
 ```ts
