@@ -1,26 +1,25 @@
-import { LOG_MESSAGE, LOG_ICON, LOG_TYPE, LOG_PREFIX } from "./levels.ts";
+import { LOG_ICON, LOG_MESSAGE, LOG_PREFIX, LOG_TYPE } from "./levels.ts";
 import { LoggerOptions } from "./types.ts";
 
 const logger = console;
 
 export class Logger {
-
   private _options: LoggerOptions = {
-    prefix: true
-  }
+    prefix: true,
+  };
 
   constructor(options?: LoggerOptions) {
     if (options) {
-      this._options = options
+      this._options = options;
     }
   }
 
   set options(options: LoggerOptions) {
-    this._options = options
+    this._options = options;
   }
 
   get options() {
-    return this._options
+    return this._options;
   }
 
   public success(message: string) {
@@ -52,12 +51,16 @@ export class Logger {
   }
 
   private _log(message: string, logType: LOG_TYPE) {
-    logger.log(`${this._prefix(logType)} ${LOG_ICON[logType]()} ${LOG_MESSAGE[logType](message)}`);
+    logger.log(
+      `${this._prefix(logType)} ${LOG_ICON[logType]()} ${
+        LOG_MESSAGE[logType](message)
+      }`,
+    );
   }
 
   private _prefix(logType: LOG_TYPE) {
     if (this._options.prefix) {
-      return LOG_PREFIX[logType]
+      return LOG_PREFIX[logType];
     }
   }
 }

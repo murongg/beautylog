@@ -38,4 +38,3 @@ export const LOG_PREFIX: Record<LOG_TYPE, string> = {
   [LOG_TYPE.Info]: chalkin.bgGray.bgBlack(" INFO "),
   [LOG_TYPE.Debug]: chalkin.bgGray.bgBlack(" DEBUG "),
 };
-
